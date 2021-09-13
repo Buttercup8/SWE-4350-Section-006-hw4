@@ -1,0 +1,32 @@
+import math
+
+class mathOperatino:
+      def __init__(self, min_value, max_value, coefficient):
+        self.min_value = min_value
+        self.max_value = max_value
+        self.coefficient = coefficient
+
+   
+        def multiply_it(self, starting_value):
+         return max(self.min_value, min(self.max_value, starting_value * self.coefficient))
+
+   
+        def add_it(self, starting_value):
+            return max(self.min_value, min(self.max_value, starting_value + self.coefficient))
+
+   
+        def sqrt_it(self, starting_value):
+            return max(self.min_value, min(self.max_value, math.pow(starting_value, -self.coefficient)))
+
+    
+        def compound_op_it(self, starting_value):
+            return self.add_it(self.multiply_it(starting_value))
+
+    
+        def complicated_math_operation(self, starting_value):
+            res = starting_value
+            res = self.multiply_it(res)
+            res = self.add_it(res)
+            res = self.sqrt_it(res)
+            res = self.compound_op_it(res)
+            return res
